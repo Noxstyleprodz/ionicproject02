@@ -1,0 +1,77 @@
+<ion-header>
+
+  <ion-navbar>
+    Icone 1 | Icone 2 | 12300 Zennies | {{ session['mail'] }}
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="card-background-page">
+  {{ objet01.ville }} + {{ objet01.prix }}
+  <br><br>
+  <ion-item *ngFor="let objet of objs">
+    {{ objet.ville }} pour un prix de {{ objet.prix }}
+  </ion-item>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+
+  <ion-slides class="marketslide" autoplay="3000" loop="true">
+    <ion-slide *ngFor="let appart of tempproj">
+      <ion-card (tap)="showplvdetails()">
+        <!-- <img src="{{appart.photo}}">-->
+        <div class="card-title">{{appart.ville}}</div>
+      </ion-card>
+    </ion-slide>
+  </ion-slides> 
+  
+ <!-- <ion-slides class="marketslide" autoplay="3000" loop="true">
+    <ion-slide>
+      <ion-card (tap)="showplvdetails()">
+        <img src="https://www.ahstatic.com/photos/5471_de_00_p_2048x1536.jpg">
+        <div class="card-title">São Paulo</div>
+        <div class="card-subtitle">41 Listings</div>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img src="https://www.lonelyplanet.fr/sites/lonelyplanet/files/media/article/image/canaux-amsterdam-nui.jpg"/>
+        <div class="card-title">Amsterdam</div>
+        <div class="card-subtitle">64 Listings</div>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img src="http://www.latinocafe.fr/images/home-grid/home_grid_05.jpg"/>
+        <div class="card-title">Reims</div>
+        <div class="card-subtitle">94 Listings</div>
+      </ion-card>
+    </ion-slide>
+  </ion-slides> -->
+  <ion-slides class="marketslide">
+    <ion-slide>
+      A
+    </ion-slide>
+    <ion-slide>
+      B
+    </ion-slide>
+    <ion-slide>
+      C
+    </ion-slide>
+  </ion-slides>
+  <ion-slides class="marketslide">
+    <ion-slide>
+      Bleu
+    </ion-slide>
+    <ion-slide>
+      Rouge
+    </ion-slide>
+    <ion-slide>
+      Vert
+    </ion-slide>
+  </ion-slides>
+</ion-content>
